@@ -1,0 +1,76 @@
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<h1 id="title">Who are u?</h1>
+
+
+
+ <p id="description">This is a survey on who  are..</p>
+
+
+<form id="survey-form">
+    <label for="name-label"> Name: </label>
+
+    <input id="name" type="text" placeholder="Enter your name here" name="name" required>
+
+  <br></br>
+    <label for="email-label">Email: </label>
+
+        <input id="email" type="email" placeholder="Enter your email here" name="email" required>
+
+	   <label for="number-label">Phone Number: </label>
+<br></br>
+	       <input id="number" min="1" max="120" type="number" placeholder="Enter your number here" name="number" required>
+
+<br></br>
+
+<!--dropdown-->
+<label for="food" class="labels"> Favorite Food:</label>
+<div class="right">
+  <select id="dropdown" name="food" class="input ">
+
+
+    <option disabled value="select"> Select an option </option>
+    <option value="pizza"> Pizza </option>
+
+
+			<option value="salad"> Salad </option>
+
+    <option value="fried-rice"> Fried Rice </option>
+                     </select></div>
+<br> </br>
+
+<!--checkbox-->
+<label for="sports" class="labels"> What sport(s) do you play/do? (check all that apply)</label>
+
+
+
+<ul id="sports" style="list-style: none" class="right" >
+  <li class="checkbox"><label><input type="checkbox" id="basketball" value="1"> Basketball </label></input></li>
+
+
+
+
+  <li class="checkbox"><label><input type="checkbox" id="soccer" value="2"> Soccer </label></input></li>
+  			<li class="checkbox"><label><input type="checkbox" id="baseball" value="3"> Baseball/Softball </label></input></li>
+  <li class="checkbox"><label><input
+	  type="checkbox" id="badminton"value="4"> Badminton </label></input></li>
+  <li class="checkbox"><label><input type="checkbox" id="football" value="5"> Football </label></input></li>
+  <li class="checkbox"><label><input type="checkbox" id="taekwondo" value="6"> Taekwondo :) </label></input></li>
+  <li class="checkbox"><label><input type="checkbox" id="tv" value="7"> Professional TV watching </label></input></li>
+</ul>
+
+
+
+
+<label for="comment" class="labels"> Any Comments or Suggestions? </label>
+<div>
+<textarea name="comment" rows="8" columns="80" class="input right" placeholder="Enter comments here..."></textarea>
+</div>
+<br> </br>
+<button id="submit" type="submit"> Submit </button>
+
+
+
+
+    </form>

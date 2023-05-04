@@ -1,0 +1,68 @@
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-top: 75px;
+  Padding: 50px 0px 5px 0px;
+}
+body {
+  background-color: #a9d7d1;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+
+}
+#survey-form {
+  background-color: #eaedf2;
+  text-align: center;
+  margin: 0px auto;
+  border-radius: 5px;
+  max-width: 900px;
+  min-width: 600px;
+  width: 75%;
+  padding-bottom: 50px;
+}
+#description {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.87em;
+}
+.input {
+  width: 280px;
+  height: 29px;
+  border-radius: 2px;
+  border: 5px;
+  border-color: grey;
+}
+#submit {
+  background-color: #59ace0;
+  color: white;
+  border-radius: 4px;
+  height: 40px;
+  width: 90px;
+  border: 0px;
+  margin: 10px;
+}
+.right {
+  display: inline-block;
+  text-align: left;
+  width: 48%;
+  vertical-align: middle;
+}
+.labels {
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  width: 40%;
+  padding: 5px;
+  float: left;
+}
+textarea {
+  height: 40px;
+}
+.radio, .checkbox{
+  position: relative;
+  left:-27px;
+  padding-bottom: 5px;
+  /*
+  background-color: yellow;*/
+  display: block;
+}
