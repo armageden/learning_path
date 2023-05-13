@@ -1,2 +1,2 @@
 # learning_path
-Tihs repo is my journy to learn code
+This repo is my journy to learn code
