@@ -2,6 +2,6 @@
 str1 = input()
 
 for i in range(len(str1)):
-
-    print(chr(ord(str1[i])+1),end="")
+    charec=ord(str1[i])+1
+    print(chr(charec),end="")
     

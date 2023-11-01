@@ -14,7 +14,6 @@ string2 = string[comma:]
 x = 0
 y = 0
 result = ""
-
 while x < len(string1) and y < len(string2):
     result += string1[x] + string2[y]
     x += 1
