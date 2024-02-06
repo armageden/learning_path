@@ -1,11 +1,7 @@
-i = 10
-while(i >= -20):
-    if(i < 0):
-        test = " != "
-        test = str(i//2) + test + str(int(i/2))
-    else:
-        test = " == "
-        test = str(i//2) + test + str(int(i/2))
-    print(test)
-    i -= 5
-
+list1=input()
+temp=""
+for i in range(len(list1)+1):
+    temp=list1[i]
+    list1[i]=list[-(i+1)]
+    list[-(i+1)]=temp      
+print(list1)
