@@ -3,10 +3,10 @@ import datetime
 today=datetime.date.today()
 year=today.year
 class Book:
-    def  __init__(self,name,author,year_of_publication):
+    def  __init__(self,name,author,year_of_pub):
         self.name=name
         self.author=author
-        self.year_of_publication=year_of_publication
+        self.year_of_publication=year_of_pub
         self.status=""
         today=datetime.date.today()
         year=today.year
