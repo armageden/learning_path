@@ -17,7 +17,10 @@ class Book:
         elif 400>age>=200:
             print("Checking the book.")
             self.status="Accepted. The book is stored on floor: 1."
-        elif 200>age:
+        elif 200>age>100:
+            print("Checking the book.")
+            self.status="Accepted. The book is stored on floor: 0."
+        elif 100>=age:
             print("Checking the book.")
             self.status="Rejected. The book is not antique enough."
 
