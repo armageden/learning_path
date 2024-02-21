@@ -39,12 +39,12 @@ print("Width:", b3.width)
 print("Breadth:", b3.breadth)
 volume = b3.height * b3.width * b3.breadth
 print(f"Volume of the box is {volume} cubic units.")
-# one = b3 == b2
-# b3.width = 100
-# two = (b3 == b2)
-# print(one)
-# print(two)
-# print(b2.width)
+one = b3 == b2
+b3.width = 100
+two = (b3 == b2)
+print(one)
+print(two)
+print(b2.width)
 
 
 #     one = (b3 == b2): This line compares the objects b3 and b2 for equality. Since b3 is assigned to b2, they both refer to the same object. Therefore, one will be True.
