@@ -5,12 +5,30 @@ class Student:
         self.cgpa=cgpa
         self.credit=credit
         self.dep=dep
-        self.scholarship=""
-    def checkScholarshipEligibility():
+        self.scholar=""
         if self.cgpa>=3.5 and self.credit>10:
             if self.cgpa>=3.7:
-                self.scholarship="Merit-based scholarship"
-                print
+                self.scholar="Merit-based scholarship"
+                
+            elif 3.7>self.cgpa>=3.5:
+                self.scholar="Need-based scholarship"
+            else:
+                self.scholar="No scholarship"
+        
+    def checkScholarshipEligibility(self):
+        if self.scholar=="Merit-based scholarship":
+            print(f"{self.name} is eligible for {self.scholar}")
+        elif self.scholar=="Need-based scholarship":
+            print(f"{self.name} is eligible for {self.scholar}")
+        else:
+            print(f"{self.name} is not eligible for scholarship.")
+    def showDetails(self):
+        print(f"Name:{self.name}")
+        print(f"Department: {self.dep}")
+        print(f"CGPA: {self.cgpa}")
+        print(f"Number of Credits: {self.credit}")
+        print(f"Scholarship Status: {self.scholar}")
+                
 
 
 # Driver Code
