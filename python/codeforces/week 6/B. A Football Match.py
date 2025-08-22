@@ -1,25 +1,44 @@
+import sys
 from collections import deque
-n=int(input())
-x1,y1,x2,y2=map(int,input().split())
-x1-=1
-y1-=1
-x2-=1
-y2-=1
-if x1==x2 and y1==y2:
-    print(0)
-    exit()
-moves=[(-2,-1),(-2,1),(2,-1),(2,1),(-1,-2),(-1,2),(1,-2),(1,2)]
-v=[[False]*n for _ in range(n)]
-q=deque([(x1,y1,0)])
-v[x1][y1]=True
-while q:
-    x,y,s=q.popleft()
-    for dx,dy in moves:
-        nx,ny=x+dx,y+dy
-        if 0<=nx<n and 0<=ny<n and not v[nx][ny]:
-            if nx==x2 and ny==y2:
-                print(s+1)
-                exit()
-            v[nx][ny]=True
-            q.append((nx,ny,s+1))
-print(-1)
+    
+def solve():
+    n, m = map(int, sys.stdin.readline().split())
+    adj = [[] for _ in range(n + 1)]
+    for _ in range(m):
+        u, v = map(int, sys.stdin.readline().split())
+        adj[u].append(v)
+        adj[v].append(u)
+    
+    color = [0] * (n + 1)
+    ans = 0
+    
+    for i in range(1, n + 1):
+        if color[i] == 0:
+            q = deque([i])
+            color[i] = 1
+            c1, c2 = 0, 0
+            is_bipartite = True
+            
+            while q:
+                u = q.popleft()
+                if color[u] == 1:
+                    c1 += 1
+                else:
+                    c2 += 1
+                
+                for v in adj[u]:
+                    if color[v] == 0:
+                        color[v] = 3 - color[u]
+                        q.append(v)
+                    elif color[v] == color[u]:
+                        is_bipartite = False
+            
+            if is_bipartite:
+                ans += max(c1, c2)
+            else:
+                print(0)
+                return
+    
+    print(ans)
+    
+solve()
