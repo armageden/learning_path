@@ -18,10 +18,16 @@ def dijkstra(n, start, adj):
 def solve():
     n, m, s, t = map(int, sys.stdin.readline().split())
     
+    u_vals = list(map(int, sys.stdin.readline().split()))
+    v_vals = list(map(int, sys.stdin.readline().split()))
+    w_vals = list(map(int, sys.stdin.readline().split()))
+    
     adj = [[] for _ in range(n + 1)]
     rev_adj = [[] for _ in range(n + 1)]
-    for _ in range(m):
-        u, v, w = map(int, sys.stdin.readline().split())
+    for i in range(m):
+        u = u_vals[i]
+        v = v_vals[i]
+        w = w_vals[i]
         adj[u].append((v, w))
         rev_adj[v].append((u, w))
     
@@ -36,6 +42,8 @@ def solve():
             meet_time = max(dist_a[i], dist_b[i])
             if meet_time < min_time:
                 min_time = meet_time
+                meet_node = i
+            elif meet_time == min_time and i < meet_node:
                 meet_node = i
     
     if meet_node == -1:
