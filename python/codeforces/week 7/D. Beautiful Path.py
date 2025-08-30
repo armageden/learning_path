@@ -1,39 +1,24 @@
 import heapq
-import sys
-
-def solve():
-    n,m,s,d=map(int,sys.stdin.readline().split())
-    w=list(map(int,sys.stdin.readline().split()))
-    adj=[[] for _ in range(n+1)]
-    for _ in range(m):
-        u,v=map(int,sys.stdin.readline().split())
-        adj[u].append(v)
-    
-    dist=[float('inf')]*(n+1)
-    
-    if s==d:
-        print(w[s-1])
-        return
-        
-    dist[s]=w[s-1]
-    pq=[(w[s-1],s)]
-
-    while pq:
-        cost,u=heapq.heappop(pq)
-        
-        if u==d:
-            print(cost)
-            return
-            
-        if cost>dist[u]:
-            continue
-
-        for v in adj[u]:
-            new_cost=cost+w[v-1]
-            if new_cost<dist[v]:
-                dist[v]=new_cost
-                heapq.heappush(pq,(new_cost,v))
-
+import math
+N,M,S,D=map(int,input().split())
+w=[0]+list(map(int,input().split()))
+adj=[[] for i in range(N+1)]
+for i in range(M):
+    u,v=map(int,input().split())
+    adj[u].append(v)
+dis=[math.inf]*(N+1)
+dis[S]=w[S]
+q=[(dis[S],S)]
+while q:
+    d,node=heapq.heappop(q)
+    if d!=dis[node]:
+        continue
+    for nei in adj[node]:
+        curr_cost=d+w[nei]
+        if curr_cost<dis[nei]:
+            dis[nei]=curr_cost
+            heapq.heappush(q,(curr_cost,nei))
+if dis[D]==math.inf:
     print(-1)
-
-solve()
+else:
+    print(dis[D])
