@@ -10,9 +10,9 @@ dis=[math.inf]*(N+1)
 dis[S]=w[S]
 q=[(dis[S],S)]
 while q:
-    d,node=heapq.heappop(q)
+    d,node=heapq.heappop(q) #(cost,node)
     if d!=dis[node]:
-        continue
+        continue #skip if not optimal 
     for nei in adj[node]:
         curr_cost=d+w[nei]
         if curr_cost<dis[nei]:
