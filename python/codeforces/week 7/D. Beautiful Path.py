@@ -2,7 +2,7 @@ import heapq
 import math
 N,M,S,D=map(int,input().split())
 w=[0]+list(map(int,input().split()))
-adj=[[] for i in range(N+1)]
+adj=[[] for _ in range(N+1)]
 for i in range(M):
     u,v=map(int,input().split())
     adj[u].append(v)
